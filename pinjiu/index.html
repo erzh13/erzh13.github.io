@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="品酒指南 - 探索葡萄酒、烈酒与精酿啤酒的品鉴艺术。提供专业的品酒术语、侍酒建议、酒款推荐及品酒礼仪，助您提升味蕾鉴赏力。">
+    <meta name="keywords" content="品酒,葡萄酒品鉴,品酒术语,侍酒技巧,红酒品鉴,精酿啤酒">
+    <title>品酒指南 - 专业葡萄酒、烈酒与精酿品鉴艺术</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6b4c35;
+            --secondary-color: #8c6b52;
+            --accent-color: #d4a373;
+            --bg-color: #fdfbf7;
+            --text-color: #2c2c2c;
+            --text-light: #666;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --spacing-unit: 20px;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/winehero/1600/900') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--max-width);
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-header h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -17px;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .view-all:hover {
+            text-decoration: underline;
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 15px;
+        }
+
+        /* Taste Wheel Section */
+        .taste-section {
+            background-color: #fff;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .taste-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .taste-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .taste-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .taste-list li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .taste-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .taste-visual {
+            flex: 1;
+            min-width: 300px;
+            background: #f9f4ef;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .taste-wheel-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Wine Types Grid */
+        .wine-types-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .wine-type-item {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            border: 1px solid #eee;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .wine-type-item:hover {
+            border-color: var(--accent-color);
+            background-color: #faf9f6;
+        }
+
+        .wine-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .wine-type-item h4 {
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 60px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-color);
+            background: white;
+        }
+
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .wine-types-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header-container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo"><span>🍷</span> 品鉴指南</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#wine-types">酒类百科</a></li>
+                    <li><a href="#tasting-guide">品鉴技巧</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探索味蕾的无限可能</h1>
+                <p>从入门到精通，系统学习葡萄酒、烈酒与精酿啤酒的品鉴艺术。掌握正确的侍酒温度、醒酒技巧与风味识别方法。</p>
+                <a href="#tasting-guide" class="cta-button">开始品鉴学习</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Wine Categories -->
+            <section id="wine-types">
+                <div class="section-header">
+                    <h2>主流酒类概览</h2>
+                    <a href="#" class="view-all">查看全部分类 &rarr;</a>
+                </div>
+                <div class="wine-types-grid">
+                    <div class="wine-type-item">
+                        <span class="wine-icon">🍇</span>
+                        <h4>红葡萄酒</h4>
+                    </div>
+                    <div class="wine-type-item">
+                        <span class="wine-icon">⚪</span>
+                        <h4>白葡萄酒</h4>
+                    </div>
+                    <div class="wine-type-item">
+                        <span class="wine-icon">🍺</span>
+                        <h4>精酿啤酒</h4>
+                    </div>
+                    <div class="wine-type-item">
+                        <span class="wine-icon">🥃</span>
+                        <h4>烈酒与威士忌</h4>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Articles -->
+            <section class="articles-section">
+                <div class="section-header">
+                    <h2>品鉴指南与推荐</h2>
+                </div>
+                <div class="grid-3">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/wine1/400/250" alt="葡萄酒品鉴" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">新手入门</span>
+                            <h3 class="card-title">如何正确醒酒：时间与温度的奥秘</h3>
+                            <p class="card-desc">醒酒不仅是去除沉淀，更是让酒液与空气充分接触，释放香气的关键步骤。了解不同葡萄品种所需的醒酒时间。</p>
+                            <div class="card-meta">
+                                <span>阅读时间：5分钟</span>
+                                <a href="#">阅读全文 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/wine2/400/250" alt="品酒礼仪" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">礼仪文化</span>
+                            <h3 class="card-title">高端品酒会礼仪与着装规范</h3>
+                            <p class="card-desc">参加品酒会时，如何正确持杯、观察酒色、摇晃酒液以及品鉴顺序？掌握这些细节，让您在社交场合游刃有余。</p>
+                            <div class="card-meta">
+                                <span>阅读时间：8分钟</span>
+                                <a href="#">阅读全文 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/wine3/400/250" alt="食物搭配" class="card-img">
+                        <div class="card-body">
+                            <span class="card-tag">搭配建议</span>
+                            <h3 class="card-title">红酒与红肉，白酒与海鲜的经典搭配法则</h3>
+                            <p class="card-desc">“红配红，白配白”并非绝对。了解单宁、酸度与油脂之间的化学反应，打造完美的味觉平衡。</p>
+                            <div class="card-meta">
+                                <span>阅读时间：6分钟</span>
+                                <a href="#">阅读全文 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Taste Wheel Section -->
+            <section id="tasting-guide" class="taste-section">
+                <div class="container">
+                    <div class="taste-container">
+                        <div class="taste-text">
+                            <h3>五感品鉴法</h3>
+                            <p style="margin-bottom: 20px;">专业的品酒不仅仅是喝，而是一场调动视觉、嗅觉、味觉、触觉和听觉的感官体验。</p>
+                            <ul class="taste-list">
+                                <li><strong>观色：</strong>在白色背景下倾斜酒杯，观察酒液的清澈度、颜色深浅及挂杯情况。</li>
+                                <li><strong>闻香：</strong>先静闻静止时的香气，再轻轻摇晃释放更多芳香分子。</li>
+                                <li><strong>品味：</strong>让酒液在口腔中停留，感受酸度、甜度、单宁（涩感）及酒精度的平衡。</li>
+                                <li><strong>回味：</strong>咽下或吐出后，感受香气在口腔中的余韵长度。</li>
+                            </ul>
+                        </div>
+                        <div class="taste-visual">
+                            <!-- Visual representation of a tasting wheel concept using CSS/SVG or simple placeholder -->
+                            <img src="https://picsum.photos/seed/tastewheel/500/500" alt="品酒轮" class="taste-wheel-img">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="faq-section">
+                <div class="section-header">
+                    <h2>品酒常见问题</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            品酒时为什么要摇晃酒杯？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            摇晃酒杯是为了增加酒液与空气的接触面积，加速挥发性芳香物质的释放，让香气更加丰富，同时也帮助观察酒液的流动性和粘稠度。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            如何判断一款酒的好坏？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            好的酒通常具有平衡的口感，不会出现某种味道过于突兀。香气复杂且层次分明，回味悠长，且适合搭配食物。个人喜好也是重要因素。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            喝红酒时为什么要配红肉？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            红酒中的单宁具有收敛性，能去除红肉中的油腻感，而单宁的涩味与肉类的脂肪结合会产生美妙的口感平衡。这就是经典的“红肉配红酒”法则。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            白葡萄酒需要醒酒吗？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            大部分年轻、果香浓郁的白葡萄酒不需要长时间醒酒，否则果香会散失。但经过橡木桶陈酿的白葡萄酒或陈年老酒，适当醒酒有助于释放复杂的香气。
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>品鉴指南</h4>
+                <p style="font-size: 0.9rem; color: #999;">致力于传播专业的酒类文化知识，为爱酒人士提供权威的品鉴参考与建议。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">酒类百科</a></li>
+                    <li><a href="#">品酒课程</a></li>
+                    <li><a href="#">合作咨询</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">波尔多红酒</a></li>
+                    <li><a href="#">香槟</a></li>
+                    <li><a href="#">单一麦芽威士忌</a></li>
+                    <li><a href="#">精酿IPA</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>邮箱：contact@wine-guide.com</li>
+                    <li>地址：上海市酒类文化园区88号</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 品鉴指南 版权所有 | 仅供学习与交流使用</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Simple Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+        
+        menuBtn.addEventListener('click', () => {
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'block';
+                nav.style.position = 'absolute';
+                nav.style.top = '70px';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.backgroundColor = 'white';
+                nav.style.padding = '20px';
+                nav.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+                nav.style.zIndex = '999';
+                
+                // Style links in mobile menu
+                nav.querySelectorAll('a').forEach(link => {
+                    link.style.display = 'block';
+                    link.style.padding = '10px 0';
+                    link.style.borderBottom = '1px solid #eee';
+                });
+            }
+        });
+    </script>
+</body>
+              </html>
