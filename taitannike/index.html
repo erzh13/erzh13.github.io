@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="泰坦尼克号在线阅读与影视资讯平台，提供泰坦尼克号电影在线观看、经典台词解析、历史背景介绍以及杰克与露丝的爱情故事深度解读。">
+    <meta name="keywords" content="泰坦尼克号在线,泰坦尼克号电影,泰坦尼克号影评,杰克露丝,经典电影">
+    <title>泰坦尼克号在线 - 经典影史巨制与浪漫传奇深度解读</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a2a3a;
+            --accent-color: #c5a059;
+            --text-main: #333;
+            --text-light: #666;
+            --bg-body: #f4f6f8;
+            --bg-card: #ffffff;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-color);
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.8);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/titanic/1920/1080') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b08d4b;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e1e4e8;
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .more-link {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card-meta {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .rating {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: 24px;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-family: "Georgia", serif;
+        }
+
+        .quote-author {
+            color: var(--accent-color);
+            font-size: 16px;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .info-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .info-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .info-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .info-text {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Cast Section */
+        .cast-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .cast-member {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .cast-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cast-name {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #999;
+            padding: 60px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">泰坦尼克号<span>在线</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">电影资讯</a></li>
+                    <li><a href="#">深度解读</a></li>
+                    <li><a href="#">经典台词</a></li>
+                    <li><a href="#">历史背景</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>永不沉没的浪漫传奇</h1>
+                <p>探索詹姆斯·卡梅隆执导的影史经典，重温杰克与露丝跨越阶级的感人爱情故事。获取在线观看资源与深度影评分析。</p>
+                <a href="#" class="btn">立即观看</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Key Features -->
+            <section>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">🎥</div>
+                        <h3 class="info-title">高清在线观看</h3>
+                        <p class="info-text">提供多版本、多画质的电影在线播放服务，还原最真实的视觉体验。</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📖</div>
+                        <h3 class="info-title">深度剧情解析</h3>
+                        <p class="info-text">详细梳理电影时间线，分析人物动机与象征意义，助你读懂经典。</p>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">⚓</div>
+                        <h3 class="info-title">历史考据</h3>
+                        <p class="info-text">基于1912年真实历史事件，还原泰坦尼克号沉没的细节与背景。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Movie Info Cards -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">电影档案</h2>
+                    <a href="#" class="more-link">查看更多档案 &rarr;</a>
+                </div>
+                <div class="movie-grid">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/movie1/400/250" alt="电影海报" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">泰坦尼克号 (1997)</h3>
+                            <div class="card-meta">1997年12月19日上映 | 剧情 / 爱情 / 灾难 | 194分钟</div>
+                            <p class="card-desc">1912年4月10日，号称“世界工业史上的奇迹”的泰坦尼克号从英国南安普顿出发...</p>
+                            <div class="card-footer">
+                                <span class="rating">9.9 分</span>
+                                <a href="#" class="more-link">详情</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/movie2/400/250" alt="幕后花絮" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">幕后制作揭秘</h3>
+                            <div class="card-meta">制作特辑 | 技术解析 | 海难特效</div>
+                            <p class="card-desc">了解詹姆斯·卡梅隆如何花费数年时间打造这艘巨轮，以及水下拍摄的艰辛历程。</p>
+                            <div class="card-footer">
+                                <span class="rating">推荐</span>
+                                <a href="#" class="more-link">阅读</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/movie3/400/250" alt="获奖记录" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">奥斯卡获奖记录</h3>
+                            <div class="card-meta">第70届奥斯卡 | 最佳影片等11项大奖</div>
+                            <p class="card-desc">回顾这部影史巨作获得的各项荣誉，包括最佳导演、最佳摄影和最佳艺术指导。</p>
+                            <div class="card-footer">
+                                <span class="rating">经典</span>
+                                <a href="#" class="more-link">查看</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Quote Section -->
+            <section class="quote-section">
+                <div class="container">
+                    <p class="quote-text">"You jump, I jump."</p>
+                    <p class="quote-author">—— 杰克与露丝</p>
+                </div>
+            </section>
+
+            <!-- Cast Section -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">主要演员</h2>
+                </div>
+                <div class="cast-list">
+                    <div class="cast-member">
+                        <img src="https://picsum.photos/seed/actor1/100/100" alt="莱昂纳多" class="cast-avatar">
+                        <span class="cast-name">莱昂纳多·迪卡普里奥</span>
+                    </div>
+                    <div class="cast-member">
+                        <img src="https://picsum.photos/seed/actor2/100/100" alt="凯特·温斯莱特" class="cast-avatar">
+                        <span class="cast-name">凯特·温斯莱特</span>
+                    </div>
+                    <div class="cast-member">
+                        <img src="https://picsum.photos/seed/actor3/100/100" alt="比利·赞恩" class="cast-avatar">
+                        <span class="cast-name">比利·赞恩</span>
+                    </div>
+                    <div class="cast-member">
+                        <img src="https://picsum.photos/seed/actor4/100/100" alt="格劳瑞亚·斯图尔特" class="cast-avatar">
+                        <span class="cast-name">格劳瑞亚·斯图尔特</span>
+                    </div>
+                    <div class="cast-member">
+                        <img src="https://picsum.photos/seed/actor5/100/100" alt="凯西·贝茨" class="cast-avatar">
+                        <span class="cast-name">凯西·贝茨</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">常见问题 (FAQ)</h2>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="card" style="margin-bottom: 15px; padding: 20px;">
+                        <h3 style="margin-bottom: 10px; font-size: 18px;">泰坦尼克号在线观看需要会员吗？</h3>
+                        <p style="color: #666;">本站提供部分免费正片资源，同时也支持VIP会员极速观看高清无广告版本。请留意页面具体的播放区域指引。</p>
+                    </div>
+                    <div class="card" style="margin-bottom: 15px; padding: 20px;">
+                        <h3 style="margin-bottom: 10px; font-size: 18px;">电影中的场景是基于真实历史吗？</h3>
+                        <p style="color: #666;">电影的大部分主要角色是虚构的，但故事背景、沉没过程以及部分配角（如船长、设计师）均基于真实历史事件改编。</p>
+                    </div>
+                    <div class="card" style="margin-bottom: 15px; padding: 20px;">
+                        <h3 style="margin-bottom: 10px; font-size: 18px;">在哪里可以找到导演剪辑版？</h3>
+                        <p style="color: #666;">目前主流发行版本为影院公映版。关于导演剪辑版或特别版，请参考官方发行资料。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">泰坦尼克号<span>在线</span></div>
+                    <p style="color: #666; line-height: 1.8;">
+                        致力于为影迷提供最全面的泰坦尼克号电影资源、深度影评以及相关历史资料。重温经典，感受永不褪色的爱情。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">电影首页</a></li>
+                        <li><a href="#">剧情简介</a></li>
+                        <li><a href="#">角色介绍</a></li>
+                        <li><a href="#">票房数据</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>内容分类</h4>
+                    <ul>
+                        <li><a href="#">高清电影</a></li>
+                        <li><a href="#">幕后花絮</a></li>
+                        <li><a href="#">历史纪录片</a></li>
+                        <li><a href="#">同人作品</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>合作洽谈</li>
+                        <li>资源投稿</li>
+                        <li>版权声明</li>
+                        <li>网站地图</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 泰坦尼克号在线资源站. All Rights Reserved. 本站仅用于影视资料展示与学习交流，不提供任何盗版下载。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
