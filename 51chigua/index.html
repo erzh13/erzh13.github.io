@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="51吃瓜群众 - 专注娱乐圈热点、明星八卦、影视资讯与网络热梗的实时聚合平台，为您提供最新鲜的吃瓜指南。">
+    <meta name="keywords" content="51吃瓜群众, 娱乐八卦, 明星资讯, 影视动态, 吃瓜指南, 网络热点">
+    <title>51吃瓜群众-最新娱乐八卦与明星热点实时追踪</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2f3542;
+            --accent-color: #ffa502;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --border-radius: 12px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #f1f2f6;
+            border-radius: 20px;
+            padding: 5px 15px;
+            width: 300px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            padding: 5px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: var(--container-width);
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
+            border-radius: var(--border-radius);
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+            color: white;
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero-desc {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 30px;
+        }
+
+        /* Feed Section */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e1e1e1;
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .filter-tabs a {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .filter-tabs a.active {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .card-meta {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .card-meta span i {
+            margin-right: 4px;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f2f6;
+            padding-top: 15px;
+        }
+
+        .tags span {
+            font-size: 12px;
+            background: #f1f2f6;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-right: 8px;
+            color: var(--text-light);
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .author-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        .author-name {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .rank-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f2f6;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 24px;
+            height: 24px;
+            background: #f1f2f6;
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .rank-num.top-1 { background: #ff4757; color: white; }
+        .rank-num.top-2 { background: #ffa502; color: white; }
+        .rank-num.top-3 { background: #2ed573; color: white; }
+
+        .rank-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-main);
+            flex: 1;
+        }
+
+        .hot-tag {
+            font-size: 10px;
+            background: #ff4757;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .hot-tag.new {
+            background: #2ed573;
+        }
+
+        /* Hot Topics */
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .topic-item {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: background 0.2s;
+        }
+
+        .topic-item:hover {
+            background: #ffeaa7;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #a4b0be;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #a4b0be;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                order: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .search-box {
+                display: none;
+            }
+            .header-inner {
+                justify-content: center;
+            }
+            .hero-title {
+                font-size: 28px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">51<span>吃瓜群众</span></a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">明星八卦</a>
+                <a href="#">影视资讯</a>
+                <a href="#">综艺热点</a>
+                <a href="#">吃瓜指南</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索热搜、明星或话题...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <span class="hero-tag">今日头条</span>
+                    <h1 class="hero-title">当红流量小花新剧开机，现场直击还原真实花絮</h1>
+                    <p class="hero-desc">最新一期吃瓜指南：揭秘剧组幕后，探讨流量时代的选角逻辑与观众期待。</p>
+                    <a href="#" class="btn">立即围观</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Left Content -->
+            <section class="feed">
+                <div class="section-header">
+                    <h2 class="section-title">最新爆料</h2>
+                    <div class="filter-tabs">
+                        <a href="#" class="active">全部</a>
+                        <a href="#">明星</a>
+                        <a href="#">影视</a>
+                        <a href="#">情感</a>
+                    </div>
+                </div>
+
+                <article class="article-card">
+                    <div class="card-meta">
+                        <span>2023-10-24 14:30</span>
+                        <span>娱乐 · 明星</span>
+                    </div>
+                    <h3 class="card-title"><a href="#">某顶流男星深夜现身夜店，疑似恋情曝光引网友热议</a></h3>
+                    <p class="card-excerpt">据知情人士透露，该男星与神秘女子举止亲密，疑似恋情坐实。网友纷纷留言：这瓜保熟吗？让我们一起回顾该男星过往的公开行程，看看是否存在蛛丝马迹。</p>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span>#恋情</span>
+                            <span>#顶流</span>
+                            <span>#深夜</span>
+                        </div>
+                        <div class="author-info">
+                            <img src="https://picsum.photos/seed/gossip1/50/50" alt="Author" class="author-avatar">
+                            <span class="author-name">吃瓜前线</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-meta">
+                        <span>2023-10-24 11:15</span>
+                        <span>影视 · 综艺</span>
+                    </div>
+                    <h3 class="card-title"><a href="#">年度最受期待悬疑剧《迷雾追踪》定档，海报引发全网猜谜</a></h3>
+                    <p class="card-excerpt">该剧由知名导演执导，汇聚了实力派与新生代演员。官方发布的概念海报仅露出一只手和一把雨伞，瞬间引爆评论区。吃瓜群众纷纷化身侦探，猜测剧情走向。</p>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span>#悬疑剧</span>
+                            <span>#定档</span>
+                            <span>#海报</span>
+                        </div>
+                        <div class="author-info">
+                            <img src="https://picsum.photos/seed/gossip2/50/50" alt="Author" class="author-avatar">
+                            <span class="author-name">影视观察员</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-meta">
+                        <span>2023-10-23 22:45</span>
+                        <span>时尚 · 红毯</span>
+                    </div>
+                    <h3 class="card-title"><a href="#">戛纳归来：某女星红毯造型引争议，网友直呼“用力过猛”</a></h3>
+                    <p class="card-excerpt">红毯向来是女星争奇斗艳的战场，但此次造型却遭到了两极分化的评价。时尚博主分析认为，礼服设计虽奢华但与肤色不符，不如自然美更受欢迎。</p>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span>#红毯</span>
+                            <span>#造型</span>
+                            <span>#时尚</span>
+                        </div>
+                        <div class="author-info">
+                            <img src="https://picsum.photos/seed/gossip3/50/50" alt="Author" class="author-avatar">
+                            <span class="author-name">时尚圈小助手</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-meta">
+                        <span>2023-10-23 18:20</span>
+                        <span>情感 · 职场</span>
+                    </div>
+                    <h3 class="card-title"><a href="#">当我们在“吃瓜”时，我们在谈论什么？——互联网时代的围观心理</a></h3>
+                    <p class="card-excerpt">从围观明星绯闻到关注社会热点，“吃瓜”早已成为一种文化现象。本文深入探讨这种行为背后的社会心理机制，以及如何理性看待网络舆论。</p>
+                    <div class="card-footer">
+                        <div class="tags">
+                            <span>#心理</span>
+                            <span>#舆论</span>
+                            <span>#理性</span>
+                        </div>
+                        <div class="author-info">
+                            <img src="https://picsum.photos/seed/gossip4/50/50" alt="Author" class="author-avatar">
+                            <span class="author-name">深度观察</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar">
+                <!-- Hot List -->
+                <div class="widget">
+                    <h3 class="section-title" style="font-size: 18px; margin-bottom: 15px;">热搜榜单</h3>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-num top-1">1</span>
+                            <span class="rank-title">某顶流恋情实锤？</span>
+                            <span class="hot-tag">爆</span>
+                        </li>
+                        <li>
+                            <span class="rank-num top-2">2</span>
+                            <span class="rank-title">新剧收视率破纪录</span>
+                            <span class="hot-tag new">新</span>
+                        </li>
+                        <li>
+                            <span class="rank-num top-3">3</span>
+                            <span class="rank-title">导演公开道歉声明</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <span class="rank-title">明星工作室集体涨粉</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <span class="rank-title">网友热议某综艺剪辑</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">6</span>
+                            <span class="rank-title">海外明星回国发展</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">7</span>
+                            <span class="rank-title">经典老剧重播口碑</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">8</span>
+                            <span class="rank-title">片酬争议再起波澜</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hot Topics -->
+                <div class="widget">
+                    <h3 class="section-title" style="font-size: 18px; margin-bottom: 15px;">热门话题</h3>
+                    <div class="topic-grid">
+                        <div class="topic-item">#年度最佳CP</div>
+                        <div class="topic-item">#悬疑片天花板</div>
+                        <div class="topic-item">#私生饭行为</div>
+                        <div class="topic-item">#剧本杀推荐</div>
+                    </div>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div class="widget" style="background: #e1e1e1; height: 250px; display: flex; align-items: center; justify-content: center; color: #777; border-radius: 12px;">
+                    广告位招租
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于51吃瓜群众</h4>
+                <p style="color: #a4b0be; font-size: 14px; line-height: 1.8;">
+                    51吃瓜群众致力于为用户提供最及时、最客观的娱乐圈资讯。我们坚持理性吃瓜，拒绝造谣传谣，共同维护健康的网络环境。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">明星大全</a></li>
+                    <li><a href="#">影视库</a></li>
+                    <li><a href="#">综艺列表</a></li>
+                    <li><a href="#">吃瓜指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">情感纠纷</a></li>
+                    <li><a href="#">片场花絮</a></li>
+                    <li><a href="#">时尚穿搭</a></li>
+                    <li><a href="#">行业动态</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#">投稿爆料</a></li>
+                    <li><a href="#">商务合作</a></li>
+                    <li><a href="#">侵权申诉</a></li>
+                    <li><a href="#">用户协议</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 51吃瓜群众 版权所有 | 本站内容仅供娱乐参考，请理性看待</p>
+        </div>
+    </footer>
+
+</body>
+</html>
